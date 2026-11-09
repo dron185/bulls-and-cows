@@ -1,4 +1,10 @@
-export const countPossibleSecrets = (...args: unknown[]) => {
-  void args;
-  return 0;
-};
+import { memoize } from './memoize.js';
+
+function countPermutations(length: number, base: number): number {
+  if (length === 0) return 1;
+  if (length > base) return 0;
+  return base * countPossibleSecrets(length - 1, base - 1);
+}
+
+export const countPossibleSecrets: (length: number, base: number) => number =
+  memoize(countPermutations);
