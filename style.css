@@ -46,3 +46,56 @@ input[type='submit'] {
   cursor: pointer;
   background: none;
 }
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: #222;
+}
+h1,
+h2 {
+  margin-top: 0;
+}
+form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+label {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+button {
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+button:hover {
+  background: #1d4ed8;
+}
+.error {
+  color: #b91c1c;
+  min-height: 1.2em;
+}
+.info {
+  color: #555;
+}
+ol.history li,
+ol.records li {
+  font-family: ui-monospace, monospace;
+  padding: 0.2rem 0;
+}
