@@ -39,7 +39,6 @@ jobs:
       # копируем html и css в папку dist
       - name: Copy static files to dist
         run: |
-          cp *.html *.css dist/
           touch dist/.nojekyll
 
       - name: Setup Pages

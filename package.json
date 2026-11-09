@@ -8,7 +8,7 @@
     "format": "prettier --write .",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "build": "tsc",
+    "build": "tsc && node -e \"const fs=require('fs'); fs.copyFileSync('index.html','dist/index.html'); fs.copyFileSync('style.css','dist/style.css');\"",
     "prepare": "husky"
   },
   "devDependencies": {
