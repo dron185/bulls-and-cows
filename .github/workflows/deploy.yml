@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "bulls-and-cows" ] # Запускать при пуше в вашу ветку
-  workflow_dispatch: # Позволяет запускать вручную из вкладки Actions
+    branches: ["bulls-and-cows"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -36,13 +36,18 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # копируем html и css в папку dist
+      - name: Copy static files to dist
+        run: |
+          cp *.html *.css dist/
+          touch dist/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Загружаем папку dist, которую создал tsc
           path: './dist'
 
       - name: Deploy to GitHub Pages
