@@ -53,6 +53,7 @@ body {
   margin: 2rem auto;
   padding: 1rem;
   color: #222;
+  background-color: #e1d4c9;
 }
 h1,
 h2 {
@@ -80,12 +81,12 @@ button {
 }
 button {
   cursor: pointer;
-  background: #2563eb;
+  background: #268a93;
   color: #fff;
-  border-color: #2563eb;
+  border-color: #268a93;
 }
 button:hover {
-  background: #1d4ed8;
+  background: #0d5c63;
 }
 .error {
   color: #b91c1c;
