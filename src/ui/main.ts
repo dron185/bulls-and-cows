@@ -41,7 +41,7 @@ const clear = (root: HTMLElement): void => {
 };
 
 const renderSettings = (root: HTMLElement): void => {
-  root.append(el('h1', { textContent: 'Bulls and Cows' }));
+  root.append(el('h1', { textContent: 'Bulls & Cows', className: 'title' }));
 
   const lengthSelect = el('select', { name: 'length' });
   LENGTHS.forEach((len) => {
@@ -99,7 +99,7 @@ const renderGame = (root: HTMLElement): void => {
   const { length, base } = settings;
 
   root.append(
-    el('h1', { textContent: 'Bulls and Cows' }),
+    el('h1', { textContent: 'Bulls & Cows', className: 'title' }),
     el('p', {
       textContent: `Length: ${length} · Base: ${base} · Attempts: ${state.attempts}`,
     }),
@@ -168,7 +168,7 @@ const renderGame = (root: HTMLElement): void => {
         }),
       ),
     );
-    root.append(el('h2', { textContent: 'Attempts' }), list);
+    root.append(el('h2', { textContent: 'Attempts', className: 'subtitle' }), list);
   }
 
   const quitBtn = el('button', { textContent: 'New game', className: 'quit-btn' });
@@ -187,7 +187,7 @@ const renderWin = (root: HTMLElement): void => {
     renderApp(root);
   });
   root.append(
-    el('h1', { textContent: 'You won!' }),
+    el('h1', { textContent: 'You won!', className: 'title' }),
     el('p', {
       textContent: `Guessed in ${state.attempts} attempts · ${(durationMs / 1000).toFixed(2)}s`,
     }),
@@ -202,7 +202,10 @@ const renderRecords = (root: HTMLElement): void => {
       textContent: `Len ${r.settings.length} · base ${r.settings.base} → ${r.attempts} attempts · ${(r.durationMs / 1000).toFixed(2)}s`,
     }),
   );
-  root.append(el('h2', { textContent: 'Records' }), el('ol', { className: 'records' }, items));
+  root.append(
+    el('h2', { textContent: 'Records', className: 'subtitle' }),
+    el('ol', { className: 'records' }, items),
+  );
 };
 
 const renderApp = (root: HTMLElement): void => {
@@ -218,6 +221,6 @@ const renderApp = (root: HTMLElement): void => {
   }
 };
 
-const container = el('div', { id: 'app' });
+const container = el('div', { id: 'app', className: 'container' });
 document.body.append(container);
 renderApp(container);
