@@ -99,3 +99,12 @@ ol.records li {
   font-family: ui-monospace, monospace;
   padding: 0.2rem 0;
 }
+
+.quit-btn {
+  margin-top: 1.5rem;
+  background: #38506c;
+  border-color: #38506c;
+}
+.quit-btn:hover {
+  background: #30445a;
+}

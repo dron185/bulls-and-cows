@@ -170,6 +170,13 @@ const renderGame = (root: HTMLElement): void => {
     );
     root.append(el('h2', { textContent: 'Attempts' }), list);
   }
+
+  const quitBtn = el('button', { textContent: 'New game', className: 'quit-btn' });
+  quitBtn.addEventListener('click', () => {
+    state = resetGame();
+    renderApp(root);
+  });
+  root.append(quitBtn);
 };
 
 const renderWin = (root: HTMLElement): void => {
